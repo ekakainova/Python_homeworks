@@ -1,0 +1,23 @@
+1. Функция "contains" не предусматривает вариант, когда искомый символ является пустой строкой:
+
+Test case: string = "     ", symbol = "" 
+Expected Result: False
+Actual Result: True
+
+2. Функция "strats_with" не предусматривает вариант, когда заданный символ является пустой строкой:
+
+Test case: string = " Mo", symbol = "" 
+Expected Result: False
+Actual Result: True
+
+3. Функция "end_with" не предусматривает вариант, когда заданный символ является пустой строкой:
+
+Test case: string = "Mo ", symbol = "" 
+Expected Result: False
+Actual Result: True
+
+4. Функция "list_to_string" принимает список, состоящий из одних пробелов:
+
+Test case: list = ["    "], symbol = ", " 
+Expected Result: ""
+Actual Result: "    "
