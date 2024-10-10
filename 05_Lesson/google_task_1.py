@@ -10,9 +10,9 @@ driver.get("http://the-internet.herokuapp.com/add_remove_elements/")
 
 for button in range(5):
     element_button = driver.find_element(
-        By.CSS_SELECTOR, "[onclick='addElement()']").click()
+        By.XPATH, '//button[text()="Add Element"]').click()
 
 delete_buttons = driver.find_elements(
-    By.CSS_SELECTOR, "[onclick='deleteElement()']")
+    By.XPATH, '//button[text()="Delete"]')
 
 print(len(delete_buttons))

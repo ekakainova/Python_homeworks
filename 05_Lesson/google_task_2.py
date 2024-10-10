@@ -13,7 +13,7 @@ driver.get("http://uitestingplayground.com/dynamicid")
 
 wait = WebDriverWait(driver, 10)
 blue_button = wait.until(EC.element_to_be_clickable(
-    (By.CSS_SELECTOR, "button.btn.btn-primary")))
+    (By.XPATH, '//button[text()="Button with Dynamic ID"]')))
 blue_button.click()
 
 sleep(2)

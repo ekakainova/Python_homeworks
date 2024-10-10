@@ -9,7 +9,7 @@ driver = webdriver.Firefox(
 
 driver.get("http://the-internet.herokuapp.com/inputs")
 
-search_input = driver.find_element(By.CSS_SELECTOR, "[type='number']")
+search_input = driver.find_element(By.CSS_SELECTOR, "input[type='number']")
 search_input.send_keys("1000")
 
 sleep(2)
