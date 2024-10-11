@@ -56,10 +56,13 @@ driver.find_element(By.XPATH, "//button[text()='Submit']").click()
 red_color = "rgba(245, 194, 199, 1)"
 green_color = "rgba(186, 219, 204, 1)"
 
+
 # проверяем на красный цвет
 def alert_color():
-    color_of_zip_code = driver.find_element(By.ID, "zip-code").value_of_css_property("border-bottom-color")
-    assert red_color==color_of_zip_code
+    color_of_zip_code = driver.find_element(
+        By.ID, "zip-code").value_of_css_property("border-bottom-color")
+    assert red_color == color_of_zip_code
+
 
 # проверяем на зеленый цвет все остальные поля
 def success_color():
@@ -67,6 +70,7 @@ def success_color():
     for element in rest_elements:
         color_of_element = element.value_of_css_property("border-bottom-color")
         assert green_color == color_of_element
+
 
 # вызываем проверки на цвет
 def test_form():

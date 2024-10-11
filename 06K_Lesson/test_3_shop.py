@@ -22,9 +22,12 @@ password.send_keys("secret_sauce")
 driver.find_element(By.ID, "login-button").click()
 
 # добавляем товары в корзину
-driver.find_element(By.CSS_SELECTOR, "button#add-to-cart-sauce-labs-backpack").click()
-driver.find_element(By.CSS_SELECTOR, "button#add-to-cart-sauce-labs-bolt-t-shirt").click()
-driver.find_element(By.CSS_SELECTOR, "button#add-to-cart-sauce-labs-onesie").click()
+driver.find_element(By.CSS_SELECTOR,
+                    "button#add-to-cart-sauce-labs-backpack").click()
+driver.find_element(By.CSS_SELECTOR,
+                    "button#add-to-cart-sauce-labs-bolt-t-shirt").click()
+driver.find_element(By.CSS_SELECTOR,
+                    "button#add-to-cart-sauce-labs-onesie").click()
 
 # переходим в корзину
 driver.find_element(By.CSS_SELECTOR, "a.shopping_cart_link").click()
@@ -46,10 +49,12 @@ postal_code.clear()
 postal_code.send_keys("123456")
 
 # нажимаем кнопку Continue
-driver.find_element(By.NAME, "continue").click()
+driver.find_element(
+    By.NAME, "continue").click()
 
 # надем и выведем Total
-total_sum = driver.find_element(By.CSS_SELECTOR, "div.summary_total_label").text
+total_sum = driver.find_element(
+    By.CSS_SELECTOR, "div.summary_total_label").text
 print(total_sum)
 
 driver.quit()
