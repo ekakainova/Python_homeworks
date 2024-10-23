@@ -6,6 +6,7 @@ from Projects_YouGile import Projects_YouGile
 api = Auth_YouGile("https://ru.yougile.com/api-v2")
 pro = Projects_YouGile("https://ru.yougile.com/api-v2")
 
+
 @pytest.mark.positive_test
 def test_add_new_project():
 
@@ -13,11 +14,12 @@ def test_add_new_project():
     result_before = project_list_before['paging']['count']
 
     pro.new_project('Api in Python')
-    
+
     project_list_after = pro.list_of_projects()
     result_after = project_list_after['paging']['count']
 
     assert result_after - result_before == 1
+
 
 @pytest.mark.positive_test
 def test_get_list_of_project():
@@ -27,6 +29,7 @@ def test_get_list_of_project():
     info = pro.list_of_projects()
 
     assert info['content'][-1]['title'] == title_of_new_project
+
 
 @pytest.mark.positive_test
 def test_delete_project():
@@ -49,6 +52,7 @@ def test_delete_project():
     assert result_after - result_before == 1
     assert result_before == result_after_deletion
 
+
 @pytest.mark.positive_test
 def test_get_project_by_id():
 
@@ -60,6 +64,7 @@ def test_get_project_by_id():
 
     assert project_info['id'] == id_project
     assert project_info['title'] == title_of_new_project
+
 
 @pytest.mark.negative_test
 def test_add_project_with_empty_title():
